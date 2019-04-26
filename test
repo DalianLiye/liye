@@ -1,0 +1,14 @@
+关于Bulk加载模式
+
+	Bulk模式是Informatica提供的一种高性能数据加载模式，它利用数据库底层机制，依靠调用数据库本身提供的Utility来进行数据的加载
+	因此，Bulk模式主要是在进行大量数据Insert操作时使用，而不是Update
+	
+　　该方式将绕过数据库的log记录，以此提高数据库加载性能，因此Bulk模式不能进行数据的Rollback操作，也不可能使用数据库做Recover操作
+	因此当使用Bulk加载模式时，需平衡性能与系统数据恢复的利弊关系 
+	
+	所以对Bulk模式也可进行调优设置，就是调整的“事务提交数”了(Commit Interval)
+	Commit Interval的默认值是10000，因此可调大这个值以减少事务数(Bulk Load Transaction)，提升性能
+	需要注意的是，该调整只对Oracle和SQL Sever有用，DB2和Sybase不受这个值影响，只与Write Block的大小有关系，一旦写满即进行提交
+
+	Bulk模式只能用来做Insert操作。如果需要Update操作，则在Session的"Treat source rows as"选项上需设置成Data Driven
+	如果同时设置了Data Driven和Bulk模式， PowerCenter Sever将自动切换采用Normal模式进行加载
