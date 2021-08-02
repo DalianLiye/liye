@@ -1,0 +1,3 @@
+# 关于CloudFormation注册表
+
+CloudFormation注册表用于管理当前账号下公共和私有扩展件的

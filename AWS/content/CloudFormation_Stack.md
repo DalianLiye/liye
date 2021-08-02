@@ -1,0 +1,24 @@
+# Stack
+
+一个stack代表了一个resource的集合，stack是管理resource的最小单元
+
+通过对stack进行增删改操作，即可对stack对应的resource集合进行增删改操作
+
+一个stack可以包含一个应用所需的所有resource，比如一个web应用程序的web服务器，数据库，网络规则等
+
+如果应用被下架，则可直接删除其支撑它的stack，删除了stack，那么其对应的resource也就都被删除了
+
+stack及其对应的resource集合都是通过CloudFormation来定义声明的
+
+CloudFormation可以确保所有的stack及对应的resource被正确的创建或删除
+
+由于stack是CloudFormation管理resource的最小单元，因此stack的创建或删除必须要其所有resource都成功创建或删除才可以
+
+当创建stack时，如果其中一个resource无法被创建，则CloudFormation会将stack回滚，并将其他已经创建好的resource删除掉
+
+当删除stack时，如果其中一个resource无法被删除，则剩下未删除的resource依然会存在，直到整个stack被成功删除
+
+stack及其对应的resource的创建和删除都是需要付费的
+
+## 创建stack
+
