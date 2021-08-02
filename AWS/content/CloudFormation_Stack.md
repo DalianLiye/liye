@@ -20,5 +20,6 @@ CloudFormation可以确保所有的stack及对应的resource被正确的创建�
 
 stack及其对应的resource的创建和删除都是需要付费的
 
-## 创建stack
+# 创建stack
 
+通过console进行操作

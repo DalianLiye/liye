@@ -14,15 +14,48 @@ Template里声明了要在Amazone创建或配置的resource，这些resource相�
 
 - **Format Version (可选)**
 
-  Template符合的 CloudFormation template版本，Template版本跟API或WSDL版本是不相同的，它跟API或WSDL版本是独立的
+  该Template的对应CloudFormation template版本，Template版本跟API或WSDL版本是不相同的，它跟API或WSDL版本是独立的
+
+  Template不同的版本，其对应包含的功能是不一样的，当前最新且唯一版本版是2010-09-09
+
+  Template的版本是不可以通过参数传递进来的
+
+  如果没有指定版本，则默认使用最新的版本
+
+  **例：**
+
+  ```yaml
+  AWSTemplateFormatVersion: "2010-09-09"
+  ```
 
 - **Description (可选)**
 
-  用于描述Template的，必须紧接着Format Version这部分
+  用于描述Template的，包含一些对Template的说明信息
+
+  纯文本格式
+
+  必须紧接着Format Version这部分
+
+  长度为0-1024字节
+
+  Template的Description是不可以通过参数传递进来的
+
+  **例：**
+
+  ```yaml
+  Description: >
+    Here are some
+    details about
+    the template.
+  ```
 
 - **Metadata (可选)**
 
-  用于提供Template额外的信息
+  用于提供Template额外的信息，即元数据信息
+
+  json和yaml格式
+
+  
 
 - **Parameters (可选)**
 
