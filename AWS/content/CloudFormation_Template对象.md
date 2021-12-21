@@ -2,7 +2,7 @@
 
 Template声明顶层对象包括以下：
 
-- **AWSTemplateFormatVersion  (可选) **
+- ** AWSTemplateFormatVersion  (可选) **
 - **Description (可选) **
 - **Parameters  (可选) ** 
 - **Mappings  (可选) ** 
